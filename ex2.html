@@ -14,7 +14,7 @@
             width: 200px;
             height: 200px;
             background-color: goldenrod;
-            border-radius: 100%;
+            border-radius: 50%;
         }
     </style>
 
@@ -34,11 +34,13 @@
        function changeShape(){
         if (square==true){
             var element = document.getElementById("div1");
-            element.className="circle";
+            element.classList.toggle("circle");
+            square=false;
         }
         else{
-            var element=document.getElementsByClassName("circle");
-            
+            var element=document.getElementsByClassName("circle")[0];
+            element.classList.toggle("circle");
+            square=true;
         }
         
        }
