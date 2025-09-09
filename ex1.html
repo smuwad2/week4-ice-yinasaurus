@@ -25,18 +25,22 @@
                 // access the formname in this case "inputform", then form can access each "name"
                 // .value to take out the text
                 var form=document.forms[formName];
+                var id=form["id"].value;
                 var age=form["age"].value;
                 var email= form["email"].value;
                 var password= form["password"].value;
                 var errorMessages= "";
+                if (id.lenght>10){
+                    errorMessages+="id cannot exceed 10 characters. \n";
+                }
                 if (age<10 || age>40){
-                    errorMessages+="Invalid age: Age must be between 10 and 40.\n";
+                    errorMessages+="Age must be between 10 and 40.\n";
                 }
                 if (email.indexOf("@")===-1){
-                    errorMessages+="Invalid email: Email must contain the character @.\n";
+                    errorMessages+="Email must contain the character @.\n";
                 }
                 if (password.trim()==""){
-                    errorMessages+="Empty password: Password must be non-empty.\n";
+                    errorMessages+="Password must be non-empty.\n";
                 }
                 if (errorMessages!=""){
                     alert(errorMessages);
