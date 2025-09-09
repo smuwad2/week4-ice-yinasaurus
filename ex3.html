@@ -1,0 +1,39 @@
+<html>
+
+<head>
+   <title>Event Handling</title>
+</head>
+
+<body>
+
+   <h1>Shopping List</h1>
+   <p>Get it done today</p>
+
+   <input type="text" id="inputText">
+   <!-- add a button here for adding new item -->
+    <button id="new" onclick="additem()">add</button>
+
+   <ul>
+      <li>Notebook<!--<button>Delete</button></li>-->
+      <li>Jello</li>
+      <li>Spinach</li>
+      <li>Rice</li>
+      <li>Birthday Cake</li>
+      <li>Candles</li>
+   </ul>
+
+   <script>
+
+      // add code here
+    function additem(){
+        var alist=document.getElementsByTagName("ul")[0];
+        const activityVal=document.getElementById("inputText").value;
+        const liElem=document.createElement("li");
+        liElem.innerText=activityVal;
+        alist.appendChild(liElem);
+    }
+   </script>
+
+</body>
+
+</html>
